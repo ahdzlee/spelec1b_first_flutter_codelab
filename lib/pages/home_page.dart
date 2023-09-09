@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../state/my_app_state.dart';
+import '../widgets/big_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('A random Idea'),
-            Text(wordPair.asPascalCase),
+            BigCard(wordPair: wordPair),
             ElevatedButton(
               onPressed: () => appState.generateWordPair(),
               child: const Text('Next'),
