@@ -12,15 +12,18 @@ class HomePage extends StatelessWidget {
     var wordPair = appState.current;
 
     return Scaffold(
-      body: Column(
-        children: [
-          const Text('A random Idea'),
-          Text(wordPair.asPascalCase),
-          ElevatedButton(
-            onPressed: () => appState.generateWordPair(),
-            child: const Text('Next'),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('A random Idea'),
+            Text(wordPair.asPascalCase),
+            ElevatedButton(
+              onPressed: () => appState.generateWordPair(),
+              child: const Text('Next'),
+            ),
+          ],
+        ),
       ),
     );
   }
