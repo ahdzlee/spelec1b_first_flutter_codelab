@@ -19,9 +19,21 @@ class HomePage extends StatelessWidget {
           children: [
             const Text('A random Idea'),
             BigCard(wordPair: wordPair),
-            ElevatedButton(
-              onPressed: () => appState.generateWordPair(),
-              child: const Text('Next'),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.favorite_border),
+                  label: const Text('Like'),
+                ),
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () => appState.generateWordPair(),
+                  child: const Text('Next'),
+                ),
+              ],
             ),
           ],
         ),
