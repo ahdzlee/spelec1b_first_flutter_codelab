@@ -9,13 +9,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
-    var wordPaird = appState.current;
+    var wordPair = appState.current;
 
     return Scaffold(
       body: Column(
         children: [
           const Text('A random Idea'),
-          Text(wordPaird.asPascalCase),
+          Text(wordPair.asPascalCase),
+          ElevatedButton(
+            onPressed: () => appState.generateWordPair(),
+            child: const Text('Next'),
+          ),
         ],
       ),
     );
